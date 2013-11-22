@@ -1,0 +1,26 @@
+[core]
+  editor = vim
+  whitespace = trailing-space,space-before-tab
+
+[apply]
+  whitespace = fix
+
+[color]
+  ui = true ;doesnt work for some reason ...
+
+  interactive = true
+  status = true
+  branch = true
+  diff = true
+[alias]
+  cm = commit
+  co = checkout
+	cb = checkout -b
+  a  = add
+  b  = branch
+  d  = diff
+  dc = diff --cached
+
+[user]
+  email = hundredwatt@gmail.com
+  name  = Jason Nochlin

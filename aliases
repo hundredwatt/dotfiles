@@ -1,0 +1,29 @@
+# Shell Commands
+alias grep="grep --color"
+alias xx="exit"
+alias mdkir="mkdir"
+
+# Git
+alias gs="git status"
+alias gl="git log --oneline --color -n"
+alias gar="git add -A; git ls-files --deleted -z | xargs -0 git rm "
+alias gr="git ls-files --deleted -z | xargs -0 git rm "
+
+# Development
+alias be="bundle exec"
+
+# System
+alias flushdnscache="sudo dscacheutil -flushcache;  sudo killall -HUP mDNSResponder"
+
+# Application
+alias ops="open -a Adobe\ Photoshop\ CS5"
+
+#alias remove_qmarks='find . | grep '?' | perl -pe "s/^((.*)[?].*)$/mv \1 \2/" | sh'
+#alias trim_whitesspace='
+#  for FILE in `exec git diff-index --check --cached HEAD -- | sed '/^[+-]/d' | cut -d ':' -f 1 | uniq` ; do
+#     # Fix them!
+#     echo $FILE
+#     (sed -i 's/[[:space:]]*$//' "$FILE" > /dev/null 2>&1 || sed -i "" 's/[[:space:]]*$//' "$FILE")
+#
+#  done
+#'
