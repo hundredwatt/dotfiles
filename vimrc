@@ -13,7 +13,7 @@ augroup vimrc_autocmds
   autocmd BufEnter * match OverLength /\%74v.*/
 augroup END
 
-au BufRead,BufNewFile {Capfile,Gemfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
+au BufRead,BufNewFile {Capfile,Gemfile,Vagrantfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 au BufRead,BufNewFile {*.jbuilder,*.rabl} setf ruby
 
 syntax on
@@ -106,4 +106,4 @@ Bundle "garbas/vim-snipmate"
 Bundle 'jgdavey/tslime.vim'
 Bundle 'Lokaltog/vim-easymotion'
 
-let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
+let g:rspec_command = 'call Send_to_Tmux("./bin/rspec {spec}\n")'

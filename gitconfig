@@ -6,7 +6,7 @@
   whitespace = fix
 
 [color]
-  ui = true ;doesnt work for some reason ...
+  ui = 1 ;doesnt work for some reason ...
 
   interactive = true
   status = true
@@ -24,3 +24,5 @@
 [user]
   email = hundredwatt@gmail.com
   name  = Jason Nochlin
+[push]
+	default = simple

@@ -40,7 +40,7 @@ bindkey -s "^T" "^[Isudo ^[A" # "t" for "toughguy"
 setopt prompt_subst
 
 # prompt
-export PS1='%F{3}${PWD##*/}%F{10} $ '
+export PS1='%F{3}${PWD##*/}%F{-1} $ '
 
 # ignore duplicate history entries
 setopt histignoredups
@@ -71,3 +71,6 @@ setopt EXTENDED_GLOB
 
 # Local config
 [[ -f ~/.zshrc.local ]] && source ~/.zshrc.local
+
+# added by travis gem
+[ -f /Users/jason/.travis/travis.sh ] && source /Users/jason/.travis/travis.sh
