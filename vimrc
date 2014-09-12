@@ -87,6 +87,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,clojure autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.erb,*.yml :call <SID>StripTrailingWhitespaces()
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
