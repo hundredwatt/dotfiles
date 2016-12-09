@@ -1,6 +1,7 @@
 [core]
   editor = vim
   whitespace = trailing-space,space-before-tab
+	autocrlf = input
 
 [apply]
   whitespace = fix
@@ -22,7 +23,13 @@
   dc = diff --cached
 
 [user]
-  email = hundredwatt@gmail.com
-  name  = Jason Nochlin
+	email = hundredwatt@users.noreply.github.com
+	name = Jason Nochlin
 [push]
-	default = simple
+	default = current
+[commit]
+	template = /Users/jason/.gitmessage
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

@@ -18,6 +18,9 @@ alias flushdnscache="sudo dscacheutil -flushcache;  sudo killall -HUP mDNSRespon
 # Application
 alias ops="open -a Adobe\ Photoshop\ CS5"
 
+# Papertrail
+alias pt="papertrail"
+
 #alias remove_qmarks='find . | grep '?' | perl -pe "s/^((.*)[?].*)$/mv \1 \2/" | sh'
 #alias trim_whitesspace='
 #  for FILE in `exec git diff-index --check --cached HEAD -- | sed '/^[+-]/d' | cut -d ':' -f 1 | uniq` ; do

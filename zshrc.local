@@ -13,14 +13,14 @@ HOMEBREW_TEMP="/Users/jason/Developer/tmp"; export HOMEBREW_TEMP
 export CONFIGURE_ARGS="--with-cflags='$CFLAGS' --with-ldflags='$LDFLAGS'"
 
 export JAVA_HOME="$(/usr/libexec/java_home)"
-export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
+#export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
+#export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
 export EC2_HOME="/Users/jason/Developer/homebrew/Library/LinkedKegs/ec2-api-tools/jars"
 
-PATH=$HOME/Current/gag/libexec:$PATH
-eval "$(/Users/jason/Dropbox/Current/gag/bin/gag init -)"
+export ANDROID_HOME=/usr/local/opt/android-sdk
 
-eval "$(hub alias -s)"
+PATH=$HOME/Current/gag/libexec:$PATH
+eval "$(/Users/jason/Current/gag/bin/gag init -)"
 
 # Show git branch name on right side of prompt
 setopt prompt_subst
@@ -39,3 +39,11 @@ vcs_info_wrapper() {
   fi
 }
 RPROMPT=$'$(vcs_info_wrapper)'
+
+export PATH="$HOME/.rbenv/bin:$PATH"
+if [ -n "$TMUX" ]; then
+  eval "$(rbenv init - zsh --no-rehash)"
+fi
+
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh

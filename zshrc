@@ -1,3 +1,8 @@
+export PATH="$HOME/.bin:$PATH"
+
+# recommended by brew doctor
+export PATH="/usr/local/bin:$PATH"
+
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # load our own completion functions
@@ -14,8 +19,8 @@ compinit
 # automatically enter directories without cd
 setopt auto_cd
 
-# use vim as the visual editor
-export VISUAL=vim
+# use vi as the visual editor
+export VISUAL=vi
 export EDITOR=$VISUAL
 
 # vi mode

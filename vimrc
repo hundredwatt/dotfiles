@@ -8,11 +8,6 @@ set directory=~/.vim/temp
 
 let mapleader=","
 
-augroup vimrc_autocmds
-  autocmd BufEnter * highlight OverLength ctermbg=darkgrey guibg=#592929
-  autocmd BufEnter * match OverLength /\%74v.*/
-augroup END
-
 au BufRead,BufNewFile {Capfile,Gemfile,Vagrantfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 au BufRead,BufNewFile {*.jbuilder,*.rabl} setf ruby
 
@@ -87,7 +82,7 @@ fun! <SID>StripTrailingWhitespaces()
 endfun
 
 autocmd FileType c,cpp,java,php,ruby,python,clojure autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
-autocmd BufWritePre *.erb,*.yml :call <SID>StripTrailingWhitespaces()
+autocmd BufWritePre *.coffee,*.scss,*.js,*.css,*.erb,*.yml :call <SID>StripTrailingWhitespaces()
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -108,3 +103,6 @@ Bundle 'jgdavey/tslime.vim'
 Bundle 'Lokaltog/vim-easymotion'
 
 let g:rspec_command = 'call Send_to_Tmux("./bin/rspec {spec}\n")'
+
+nmap <S-Enter> O<Esc>
+nmap <CR> o<Esc>
