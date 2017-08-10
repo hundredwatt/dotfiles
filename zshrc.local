@@ -12,15 +12,10 @@ LDFLAGS="-L/Users/jason/Developer/lib"; export LDFLAGS
 HOMEBREW_TEMP="/Users/jason/Developer/tmp"; export HOMEBREW_TEMP
 export CONFIGURE_ARGS="--with-cflags='$CFLAGS' --with-ldflags='$LDFLAGS'"
 
-export JAVA_HOME="$(/usr/libexec/java_home)"
-#export EC2_PRIVATE_KEY="$(/bin/ls "$HOME"/.ec2/pk-*.pem | /usr/bin/head -1)"
-#export EC2_CERT="$(/bin/ls "$HOME"/.ec2/cert-*.pem | /usr/bin/head -1)"
-export EC2_HOME="/Users/jason/Developer/homebrew/Library/LinkedKegs/ec2-api-tools/jars"
+# export JAVA_HOME="$(/usr/libexec/java_home)"
 
-export ANDROID_HOME=/usr/local/opt/android-sdk
-
-PATH=$HOME/Current/gag/libexec:$PATH
-eval "$(/Users/jason/Current/gag/bin/gag init -)"
+PATH=$HOME/GaggleAMP/gag/libexec:$PATH
+eval "$(/Users/jason/GaggleAMP/gag/bin/gag init -)"
 
 # Show git branch name on right side of prompt
 setopt prompt_subst
@@ -45,5 +40,5 @@ if [ -n "$TMUX" ]; then
   eval "$(rbenv init - zsh --no-rehash)"
 fi
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# Fix ssh-agent & keychain interaction on Sierra
+{ eval `ssh-agent`; ssh-add -A; } &>/dev/null

@@ -2,9 +2,9 @@ export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor
 export PATH="/usr/local/bin:$PATH"
+eval "$(rbenv init - --no-rehash)"
 
 PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
@@ -79,3 +79,10 @@ setopt EXTENDED_GLOB
 
 # added by travis gem
 [ -f /Users/jason/.travis/travis.sh ] && source /Users/jason/.travis/travis.sh
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
