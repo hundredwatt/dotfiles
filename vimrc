@@ -2,6 +2,7 @@ set expandtab
 set softtabstop=2
 set shiftwidth=2
 set tabstop=2
+set tw=102
 
 set backupdir=~/.vim/temp
 set directory=~/.vim/temp
@@ -9,7 +10,7 @@ set directory=~/.vim/temp
 let mapleader=","
 
 au BufRead,BufNewFile {Capfile,Gemfile,Vagrantfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
-au BufRead,BufNewFile {*.jbuilder,*.rabl} setf ruby
+au BufRead,BufNewFile {*.jbuilder,*.rabl,*.rubyxl} setf ruby
 
 syntax on
 filetype plugin indent on
@@ -49,7 +50,6 @@ set hlsearch
 nmap <silent> <C-N> :silent noh<CR>
 
 au BufRead,BufNewFile *.go set filetype=go
-set tw=72
 
 au  BufNewFile,BufRead *.jst set syntax=jst
 au BufRead,BufNewFile *.md set filetype=markdown
@@ -60,10 +60,13 @@ set relativenumber
 function! NumberToggle()
   if(&relativenumber == 1)
     set number
+    set norelativenumber
   else
     if(&number == 1)
       set nonumber
+      set norelativenumber
     else
+      set nonumber
       set relativenumber
     endif
   endif
@@ -101,6 +104,7 @@ Bundle "tomtom/tlib_vim"
 Bundle "garbas/vim-snipmate"
 Bundle 'jgdavey/tslime.vim'
 Bundle 'Lokaltog/vim-easymotion'
+Bundle 'keith/swift.vim'
 
 let g:rspec_command = 'call Send_to_Tmux("./bin/rspec {spec}\n")'
 
