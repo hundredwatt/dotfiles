@@ -21,6 +21,11 @@
   b  = branch
   d  = diff
   dc = diff --cached
+  bd = branch -D @{-1}
+  r-c = rebase --continue
+  r-s = rebase --skip
+  r-a = rebase --abort
+  c-p = cherry-pick
 
 [user]
 	email = hundredwatt@users.noreply.github.com
