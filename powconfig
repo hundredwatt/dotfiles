@@ -1,3 +1,4 @@
 export HOME=/Users/jason
 export POW_EXT_DOMAINS=ngrok.io
 export PATH="$HOME/.rbenv/shims:$HOME/.rbenv/bin:$PATH"
+export POW_DOMAINS=test,local
