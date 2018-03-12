@@ -36,9 +36,7 @@ vcs_info_wrapper() {
 RPROMPT=$'$(vcs_info_wrapper)'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-if [ -n "$TMUX" ]; then
-  eval "$(rbenv init - zsh --no-rehash)"
-fi
+eval "$(rbenv init - zsh --no-rehash)"
 
 # Fix ssh-agent & keychain interaction on Sierra
 { eval `ssh-agent`; ssh-add -A; } &>/dev/null
