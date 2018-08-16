@@ -30,3 +30,6 @@ alias pt="papertrail"
 #
 #  done
 #'
+
+# node_modules/ in local directory
+alias npm-exec='PATH=$(npm bin):$PATH'
