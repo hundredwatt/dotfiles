@@ -29,7 +29,7 @@ set hlsearch
 filetype plugin indent on
 syntax on
 au BufRead,BufNewFile {Capfile,Gemfile,Vagrantfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
-au BufRead,BufNewFile {*.jbuilder,*.rabl,*.rubyxl} setf ruby
+au BufRead,BufNewFile {*.jbuilder,*.rabl,*.rubyxl,*.etl} setf ruby
 au BufRead,BufNewFile *.go set filetype=go
 au  BufNewFile,BufRead *.jst set syntax=jst
 au BufRead,BufNewFile *.md set filetype=markdown
