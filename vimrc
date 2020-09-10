@@ -1,14 +1,6 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-execute pathogen#infect()
-
-Bundle 'gmarik/vundle'
-Bundle 'thoughtbot/vim-rspec'
-Bundle 'mileszs/ack.vim'
-
 set expandtab
 set softtabstop=2
 set shiftwidth=2
@@ -31,8 +23,9 @@ syntax on
 au BufRead,BufNewFile {Capfile,Gemfile,Vagrantfile,Rakefile,Thorfile,config.ru,.caprc,.irbrc,irb_tempfile*} set ft=ruby
 au BufRead,BufNewFile {*.jbuilder,*.rabl,*.rubyxl,*.etl} setf ruby
 au BufRead,BufNewFile *.go set filetype=go
-au  BufNewFile,BufRead *.jst set syntax=jst
+au BufNewFile,BufRead *.jst set syntax=jst
 au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.port set filetype=python
 
 set relativenumber
 function! NumberToggle()
@@ -82,16 +75,9 @@ nmap <silent> <C-N> :silent noh<CR>
 nmap <S-Enter> O<Esc>
 nmap <CR> o<Esc>
 
-map <Leader>g :call Ack()<CR>
-
-" Rspec.vim mappings
-let g:rspec_command = 'call Send_to_Tmux("./bin/rspec {spec}\n")'
-map <Leader>t :call RunCurrentSpecFile()<CR>
-map <Leader>s :call RunNearestSpec()<CR>
-map <Leader>l :call RunLastSpec()<CR>
-map <Leader>a :call RunAllSpecs()<CR>
-
 autocmd BufReadPost,FileReadPost,BufNewFile * call system("tmux rename-window " . expand("%:t"))
 autocmd VimLeave * call system("tmux rename-window bash")
 autocmd FileType c,cpp,java,php,ruby,python autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 autocmd BufWritePre *.coffee,*.scss,*.js,*.css,*.erb,*.yml :call <SID>StripTrailingWhitespaces()
+autocmd Filetype python setl expandtab tabstop=2 shiftwidth=2
+

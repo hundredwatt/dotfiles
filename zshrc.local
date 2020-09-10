@@ -14,9 +14,6 @@ export CONFIGURE_ARGS="--with-cflags='$CFLAGS' --with-ldflags='$LDFLAGS'"
 
 # export JAVA_HOME="$(/usr/libexec/java_home)"
 
-PATH=$HOME/GaggleAMP/gag/libexec:$PATH
-eval "$(/Users/jason/GaggleAMP/gag/bin/gag init -)"
-
 # Show git branch name on right side of prompt
 setopt prompt_subst
 autoload -Uz vcs_info
@@ -36,7 +33,7 @@ vcs_info_wrapper() {
 RPROMPT=$'$(vcs_info_wrapper)'
 
 export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh --no-rehash)"
+eval "$(rbenv init - --no-rehash zsh)"
 
 # Fix ssh-agent & keychain interaction on Sierra
 { eval `ssh-agent`; ssh-add -A; } &>/dev/null
@@ -44,3 +41,7 @@ eval "$(rbenv init - zsh --no-rehash)"
 export NVM_DIR="$HOME/.nvm"
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+
+export GPG_TTY="$(tty)"
+export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+gpgconf --launch gpg-agent

@@ -1,15 +1,14 @@
 export PATH="$HOME/.bin:$PATH"
 
 # recommended by brew doctor
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
-PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # load our own completion functions
 fpath=(~/.zsh/completion $fpath)
 
 # completion
 autoload -U compinit
-compinit
+compinit -u
 
 #for function in ~/.zsh/functions/*; do
 #  source $function
@@ -85,3 +84,6 @@ setopt EXTENDED_GLOB
 # tabtab source for sls package
 # uninstall by removing these lines or running `tabtab uninstall sls`
 [[ -f /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh ]] && . /usr/local/lib/node_modules/serverless/node_modules/tabtab/.completions/sls.zsh
+
+# added by Snowflake SnowSQL installer v1.2
+export PATH=/Applications/SnowSQL.app/Contents/MacOS:$PATH
