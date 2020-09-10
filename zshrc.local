@@ -38,9 +38,11 @@ eval "$(rbenv init - --no-rehash zsh)"
 # Fix ssh-agent & keychain interaction on Sierra
 { eval `ssh-agent`; ssh-add -A; } &>/dev/null
 
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion" ] && . "/usr/local/opt/nvm/etc/bash_completion"  # This loads nvm bash_completion
+export NVM_DIR=~/.nvm
+source $(brew --prefix nvm)/nvm.sh
+
+export GOPATH=~/go
+export GOBIN=~/go/bin
 
 export GPG_TTY="$(tty)"
 export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
